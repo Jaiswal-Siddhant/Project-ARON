@@ -6,20 +6,33 @@ const sendEmail = require('../utils/sendEmail');
 const crypto = require('crypto');
 
 // Register User
-exports.registerUser = catchAsyncError(async (req, res, next) => {
-	const { name, email, password } = req.body;
-	const user = await User.create({
-		name,
-		email,
-		password,
-		avatar: {
-			public_id: 'sample ID',
-			url: 'sampleURI',
-		},
-	});
-
-	sendToken(user, 201, res);
-});
+exports.registerUser = async (req, res, next) => {
+	try {
+		const { name, email, password } = req.body;
+		const user = await User.create({
+			name,
+			email,
+			password,
+			avatar: {
+				public_id: 'sample ID',
+				url: 'sampleURI',
+			},
+		});
+		sendToken(user, 201, res);
+	} catch (error) {
+		if (error.message.includes('User validation failed')) {
+			let msg = error.message
+				.replace('User validation failed:', '')
+				.split(':')[1]
+				.trim();
+			return next(new ErrorHandler(msg, 400).getError(res));
+		} else {
+			return next(
+				new ErrorHandler('Email already exists', 409).getError(res)
+			);
+		}
+	}
+};
 
 exports.loginUser = catchAsyncError(async (req, res, next) => {
 	const { email, password } = req.body;
