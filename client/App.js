@@ -20,8 +20,8 @@ export default function App() {
           headerShown: false,
         }}
       >
-        <Stack.Screen name="Sign" component={Sign} />
         <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="Sign" component={Sign} />
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Mycart" component={MyCart} />
         <Stack.Screen name="ProductInfo" component={ProductInfo} />
