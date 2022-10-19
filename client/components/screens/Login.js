@@ -27,7 +27,7 @@ const Login = ({ navigation }) => {
 				}),
 			};
 			const re = await fetch(
-				'http://192.168.29.81:4000/api/v1/login',
+				'http://192.168.0.104:4000/api/v1/login',
 				data
 			);
 			if (re.status != 200) {
@@ -46,6 +46,10 @@ const Login = ({ navigation }) => {
 
 	return (
 		<View style={styles.wrapper}>
+			<Image
+			source={''}>
+
+			</Image>
 			<ScrollView style={styles.scrollStyle}>
 				<Text
 					style={{

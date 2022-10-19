@@ -30,11 +30,11 @@ const Login = ({ navigation }) => {
 				}),
 			};
 			const re = await fetch(
-				'http://192.168.29.81:4000/api/v1/register',
+				'http://192.168.0.104:4000/api/v1/register',
 				data
 			);
 			if (re.status != 201) {
-				let txt = 'asdasd'; //await re.json();
+				let txt = await re.json();
 				setMsgText(txt);
 				setIsInvalid(true);
 			} else {
@@ -100,7 +100,7 @@ const Login = ({ navigation }) => {
 					placeholder='password`'
 					style={styles.inputText}
 					onChangeText={(pass) => setPass(pass)}
-					// secureTextEntry={true}
+				// secureTextEntry={true}
 				/>
 			</View>
 			<View style={{ paddingStart: 20, paddingTop: 10 }}>
