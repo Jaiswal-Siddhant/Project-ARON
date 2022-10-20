@@ -30,7 +30,11 @@ const Login = ({ navigation }) => {
 				}),
 			};
 			const re = await fetch(
+<<<<<<< HEAD
+				'http://192.168.29.81:4000/api/v1/register',
+=======
 				'http://192.168.0.104:4000/api/v1/register',
+>>>>>>> c1b14e9723de4849f1c768c40927283256a48031
 				data
 			);
 			if (re.status != 201) {
@@ -100,7 +104,11 @@ const Login = ({ navigation }) => {
 					placeholder='password`'
 					style={styles.inputText}
 					onChangeText={(pass) => setPass(pass)}
+<<<<<<< HEAD
+					// secureTextEntry={true}
+=======
 				// secureTextEntry={true}
+>>>>>>> c1b14e9723de4849f1c768c40927283256a48031
 				/>
 			</View>
 			<View style={{ paddingStart: 20, paddingTop: 10 }}>
@@ -121,6 +129,25 @@ const Login = ({ navigation }) => {
 						</View>
 					</TouchableOpacity>
 				</View>
+<<<<<<< HEAD
+				<View style={styles.textBoxLogin.wrapper}>
+					<Text
+						style={{
+							...styles.textBoxLogin.small,
+						}}>
+						Already have an acccount?
+					</Text>
+					<TouchableOpacity
+						onPress={() => navigation.navigate('Login')}>
+						<View>
+							<Text
+								style={{
+									color: COLOURS.white,
+									paddingTop: 20,
+								}}>
+								Login Here
+							</Text>
+=======
 				<Text style={styles.textBoxLogin.small}>
 					Already have an acccount?
 				</Text>
@@ -129,6 +156,7 @@ const Login = ({ navigation }) => {
 						onPress={() => navigation.navigate('Login')}>
 						<View>
 							<Text style={styles.textBoxLogin.btn}>Log In</Text>
+>>>>>>> c1b14e9723de4849f1c768c40927283256a48031
 						</View>
 					</TouchableOpacity>
 				</View>
@@ -143,20 +171,36 @@ const styles = StyleSheet.create({
 		paddingHorizontal: 25,
 		backgroundColor: COLOURS.black,
 	},
+<<<<<<< HEAD
+
+=======
+>>>>>>> c1b14e9723de4849f1c768c40927283256a48031
 	scrollStyle: {
 		color: COLOURS.blue,
 		fontSize: 40,
 		fontWeight: 'bold',
 		paddingStart: 20,
 	},
+<<<<<<< HEAD
+
+=======
+>>>>>>> c1b14e9723de4849f1c768c40927283256a48031
 	gap: {
 		paddingStart: 20,
 		color: COLOURS.backgroundMedium,
 	},
+<<<<<<< HEAD
+
+=======
+>>>>>>> c1b14e9723de4849f1c768c40927283256a48031
 	headingText: {
 		paddingStart: 20,
 		paddingTop: 10,
 	},
+<<<<<<< HEAD
+
+=======
+>>>>>>> c1b14e9723de4849f1c768c40927283256a48031
 	inputText: {
 		marginTop: 5,
 		padding: 5,
@@ -165,12 +209,28 @@ const styles = StyleSheet.create({
 		borderRadius: 10,
 		backgroundColor: COLOURS.backgroundMedium,
 	},
+<<<<<<< HEAD
+
+=======
+>>>>>>> c1b14e9723de4849f1c768c40927283256a48031
 	footerView: {
 		paddingStart: 20,
 		paddingTop: 10,
 		marginTop: 10,
 	},
+<<<<<<< HEAD
+
 	textBoxLogin: {
+		wrapper: {
+			flex: 1,
+			width: '100%',
+			flexDirection: 'row',
+			justifyContent: 'space-between',
+			marginTop: 5,
+		},
+=======
+	textBoxLogin: {
+>>>>>>> c1b14e9723de4849f1c768c40927283256a48031
 		btn: {
 			backgroundColor: '#2196F3',
 			color: COLOURS.white,
@@ -184,7 +244,11 @@ const styles = StyleSheet.create({
 		},
 		small: {
 			paddingTop: 20,
+<<<<<<< HEAD
+			paddingStart: 70,
+=======
 			paddingStart: 90,
+>>>>>>> c1b14e9723de4849f1c768c40927283256a48031
 			color: COLOURS.backgroundMedium,
 		},
 	},
