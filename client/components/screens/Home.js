@@ -11,10 +11,6 @@ import { COLOURS, Items } from '../database/database';
 import Entypo from 'react-native-vector-icons/Entypo';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
-<<<<<<< HEAD
-=======
-
->>>>>>> c1b14e9723de4849f1c768c40927283256a48031
 const Home = ({ navigation }) => {
 	const [sofa, setSofa] = useState([]);
 	const [chair, setChair] = useState([]);
@@ -61,11 +57,7 @@ const Home = ({ navigation }) => {
 					style={{
 						width: '100%',
 						height: 200,
-<<<<<<< HEAD
 						borderRadius: 20,
-=======
-						borderRadius: 30,
->>>>>>> c1b14e9723de4849f1c768c40927283256a48031
 						backgroundColor: COLOURS.backgroundLight,
 						justifyContent: 'center',
 						alignItems: 'center',
@@ -89,10 +81,7 @@ const Home = ({ navigation }) => {
 						fontWeight: '500',
 						textAlign: 'center',
 						marginBottom: 4,
-<<<<<<< HEAD
 						paddingTop: 10,
-=======
->>>>>>> c1b14e9723de4849f1c768c40927283256a48031
 					}}>
 					{data.productName}
 				</Text>

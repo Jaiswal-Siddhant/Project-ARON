@@ -8,10 +8,7 @@ import {
 	TextInput,
 	StyleSheet,
 } from 'react-native';
-<<<<<<< HEAD
 import Entypo from 'react-native-vector-icons/Entypo';
-=======
->>>>>>> c1b14e9723de4849f1c768c40927283256a48031
 import React, { useEffect, useState } from 'react';
 import { COLOURS } from '../database/database';
 
@@ -31,11 +28,7 @@ const Login = ({ navigation }) => {
 				}),
 			};
 			const re = await fetch(
-<<<<<<< HEAD
 				'http://192.168.29.81:4000/api/v1/login',
-=======
-				'http://192.168.0.104:4000/api/v1/login',
->>>>>>> c1b14e9723de4849f1c768c40927283256a48031
 				data
 			);
 			if (re.status != 200) {
@@ -54,14 +47,7 @@ const Login = ({ navigation }) => {
 
 	return (
 		<View style={styles.wrapper}>
-<<<<<<< HEAD
 			<Image source={''}></Image>
-=======
-			<Image
-			source={''}>
-
-			</Image>
->>>>>>> c1b14e9723de4849f1c768c40927283256a48031
 			<ScrollView style={styles.scrollStyle}>
 				<Text
 					style={{
@@ -74,18 +60,13 @@ const Login = ({ navigation }) => {
 				</Text>
 				<Text style={styles.gap}></Text>
 
-<<<<<<< HEAD
 				{/* User field*/}
-=======
-				{/* Email field*/}
->>>>>>> c1b14e9723de4849f1c768c40927283256a48031
 				<View style={styles.headingText}>
 					<Text
 						style={{
 							color: COLOURS.white,
 						}}>
 						{' '}
-<<<<<<< HEAD
 					</Text>
 					<View style={styles.inputWrapper}>
 						<Entypo
@@ -105,25 +86,11 @@ const Login = ({ navigation }) => {
 
 				{/* password field*/}
 				<View style={{ paddingStart: 20, paddingTop: 15 }}>
-=======
-						Email
-					</Text>
-					<TextInput
-						placeholder='Email'
-						style={styles.inputText}
-						onChangeText={(email) => setEmail(email)}
-					/>
-				</View>
-
-				{/* number field*/}
-				<View style={{ paddingStart: 20, paddingTop: 10 }}>
->>>>>>> c1b14e9723de4849f1c768c40927283256a48031
 					<Text
 						style={{
 							color: COLOURS.white,
 						}}>
 						{' '}
-<<<<<<< HEAD
 					</Text>
 					<View style={styles.inputWrapper}>
 						<Entypo
@@ -141,16 +108,6 @@ const Login = ({ navigation }) => {
 							style={styles.inputText}
 						/>
 					</View>
-=======
-						Password
-					</Text>
-					<TextInput
-						placeholder='Password'
-						secureTextEntry={true}
-						onChangeText={(pass) => setPass(pass)}
-						style={styles.inputText}
-					/>
->>>>>>> c1b14e9723de4849f1c768c40927283256a48031
 				</View>
 				<View style={{ paddingStart: 20, paddingTop: 10 }}>
 					<Text
@@ -168,17 +125,12 @@ const Login = ({ navigation }) => {
 							onPress={() => validateUser(email, pass)}>
 							{/* onPress={() => navigation.navigate('Home')}> */}
 							<View>
-<<<<<<< HEAD
 								<Text style={styles.textBoxSignup.btn}>
-=======
-								<Text style={styles.textBoxLogin.btn}>
->>>>>>> c1b14e9723de4849f1c768c40927283256a48031
 									Login
 								</Text>
 							</View>
 						</TouchableOpacity>
 					</View>
-<<<<<<< HEAD
 					<View style={styles.textBoxSignup.wrapper}>
 						<Text
 							style={{
@@ -195,17 +147,6 @@ const Login = ({ navigation }) => {
 										paddingTop: 20,
 									}}>
 									Sign Up Here
-=======
-					<Text style={styles.textBoxLogin.small}>
-						Not a regestered user?
-					</Text>
-					<View style={{ ...styles.footerView, marginTop: 0 }}>
-						<TouchableOpacity
-							onPress={() => navigation.navigate('Sign')}>
-							<View>
-								<Text style={styles.textBoxLogin.btn}>
-									Sign Up
->>>>>>> c1b14e9723de4849f1c768c40927283256a48031
 								</Text>
 							</View>
 						</TouchableOpacity>
@@ -234,7 +175,6 @@ const styles = StyleSheet.create({
 		paddingStart: 20,
 		paddingTop: 10,
 	},
-<<<<<<< HEAD
 	inputWrapper: {
 		flex: 1,
 		flexDirection: 'row',
@@ -252,14 +192,6 @@ const styles = StyleSheet.create({
 		height: 50,
 		borderRadius: 10,
 		flex: 1,
-=======
-	inputText: {
-		marginTop: 5,
-		padding: 5,
-		paddingLeft: 15,
-		height: 50,
-		borderRadius: 10,
->>>>>>> c1b14e9723de4849f1c768c40927283256a48031
 		backgroundColor: COLOURS.backgroundMedium,
 	},
 	footerView: {
@@ -267,7 +199,6 @@ const styles = StyleSheet.create({
 		paddingTop: 10,
 		marginTop: 10,
 	},
-<<<<<<< HEAD
 	textBoxSignup: {
 		wrapper: {
 			flex: 1,
@@ -276,9 +207,6 @@ const styles = StyleSheet.create({
 			justifyContent: 'space-between',
 			marginTop: 5,
 		},
-=======
-	textBoxLogin: {
->>>>>>> c1b14e9723de4849f1c768c40927283256a48031
 		btn: {
 			backgroundColor: '#2196F3',
 			color: COLOURS.white,
@@ -292,11 +220,7 @@ const styles = StyleSheet.create({
 		},
 		small: {
 			paddingTop: 20,
-<<<<<<< HEAD
 			paddingStart: 80,
-=======
-			paddingStart: 90,
->>>>>>> c1b14e9723de4849f1c768c40927283256a48031
 			color: COLOURS.backgroundMedium,
 		},
 	},
