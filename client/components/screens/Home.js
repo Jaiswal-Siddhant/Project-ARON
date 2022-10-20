@@ -48,27 +48,27 @@ const Home = ({ navigation }) => {
 					navigation.navigate('ProductInfo', { productID: data.id })
 				}
 				style={{
-					width: '45%',
-					marginTop: 15,
+					width: '50%',
+					marginTop: 10,
 					padding: 5,
+					paddingRight: 25,
 				}}>
 				<View
 					style={{
 						width: '100%',
-						height: 250,
-						borderRadius: 30,
+						height: 200,
+						borderRadius: 20,
 						backgroundColor: COLOURS.backgroundLight,
 						justifyContent: 'center',
 						alignItems: 'center',
-                        marginBottom: 6,
-                        marginLeft: 10,
+						marginLeft: 10,
 					}}>
 					{/*rendering product Image*/}
 					<Image
 						source={data.productImage}
 						style={{
 							width: '100%',
-							height: '80%',
+							height: '100%',
 							resizeMode: 'contain',
 						}}
 					/>
@@ -81,6 +81,7 @@ const Home = ({ navigation }) => {
 						fontWeight: '500',
 						textAlign: 'center',
 						marginBottom: 4,
+						paddingTop: 10,
 					}}>
 					{data.productName}
 				</Text>
@@ -213,8 +214,8 @@ const Home = ({ navigation }) => {
 							EXPLORE
 						</Text>
 					</View>
-                </View>
-                
+				</View>
+
 				{/*Product Loading */}
 				<View
 					style={{

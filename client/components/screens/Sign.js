@@ -34,7 +34,7 @@ const Login = ({ navigation }) => {
 				data
 			);
 			if (re.status != 201) {
-				let txt = 'asdasd'; //await re.json();
+				let txt = await re.json();
 				setMsgText(txt);
 				setIsInvalid(true);
 			} else {
@@ -121,14 +121,23 @@ const Login = ({ navigation }) => {
 						</View>
 					</TouchableOpacity>
 				</View>
-				<Text style={styles.textBoxLogin.small}>
-					Already have an acccount?
-				</Text>
-				<View style={{ ...styles.footerView, marginTop: 0 }}>
+				<View style={styles.textBoxLogin.wrapper}>
+					<Text
+						style={{
+							...styles.textBoxLogin.small,
+						}}>
+						Already have an acccount?
+					</Text>
 					<TouchableOpacity
 						onPress={() => navigation.navigate('Login')}>
 						<View>
-							<Text style={styles.textBoxLogin.btn}>Log In</Text>
+							<Text
+								style={{
+									color: COLOURS.white,
+									paddingTop: 20,
+								}}>
+								Login Here
+							</Text>
 						</View>
 					</TouchableOpacity>
 				</View>
@@ -143,20 +152,24 @@ const styles = StyleSheet.create({
 		paddingHorizontal: 25,
 		backgroundColor: COLOURS.black,
 	},
+
 	scrollStyle: {
 		color: COLOURS.blue,
 		fontSize: 40,
 		fontWeight: 'bold',
 		paddingStart: 20,
 	},
+
 	gap: {
 		paddingStart: 20,
 		color: COLOURS.backgroundMedium,
 	},
+
 	headingText: {
 		paddingStart: 20,
 		paddingTop: 10,
 	},
+
 	inputText: {
 		marginTop: 5,
 		padding: 5,
@@ -165,12 +178,21 @@ const styles = StyleSheet.create({
 		borderRadius: 10,
 		backgroundColor: COLOURS.backgroundMedium,
 	},
+
 	footerView: {
 		paddingStart: 20,
 		paddingTop: 10,
 		marginTop: 10,
 	},
+
 	textBoxLogin: {
+		wrapper: {
+			flex: 1,
+			width: '100%',
+			flexDirection: 'row',
+			justifyContent: 'space-between',
+			marginTop: 5,
+		},
 		btn: {
 			backgroundColor: '#2196F3',
 			color: COLOURS.white,
@@ -184,7 +206,7 @@ const styles = StyleSheet.create({
 		},
 		small: {
 			paddingTop: 20,
-			paddingStart: 90,
+			paddingStart: 70,
 			color: COLOURS.backgroundMedium,
 		},
 	},

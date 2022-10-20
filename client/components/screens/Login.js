@@ -8,6 +8,7 @@ import {
 	TextInput,
 	StyleSheet,
 } from 'react-native';
+import Entypo from 'react-native-vector-icons/Entypo';
 import React, { useEffect, useState } from 'react';
 import { COLOURS } from '../database/database';
 
@@ -46,6 +47,7 @@ const Login = ({ navigation }) => {
 
 	return (
 		<View style={styles.wrapper}>
+			<Image source={''}></Image>
 			<ScrollView style={styles.scrollStyle}>
 				<Text
 					style={{
@@ -58,37 +60,54 @@ const Login = ({ navigation }) => {
 				</Text>
 				<Text style={styles.gap}></Text>
 
-				{/* Email field*/}
+				{/* User field*/}
 				<View style={styles.headingText}>
 					<Text
 						style={{
 							color: COLOURS.white,
 						}}>
 						{' '}
-						Email
 					</Text>
-					<TextInput
-						placeholder='Email'
-						style={styles.inputText}
-						onChangeText={(email) => setEmail(email)}
-					/>
+					<View style={styles.inputWrapper}>
+						<Entypo
+							size={16}
+							name='user'
+							style={{
+								color: COLOURS.white,
+								padding: 10,
+							}}></Entypo>
+						<TextInput
+							placeholder='Email'
+							style={styles.inputText}
+							onChangeText={(email) => setEmail(email)}
+						/>
+					</View>
 				</View>
 
-				{/* number field*/}
-				<View style={{ paddingStart: 20, paddingTop: 10 }}>
+				{/* password field*/}
+				<View style={{ paddingStart: 20, paddingTop: 15 }}>
 					<Text
 						style={{
 							color: COLOURS.white,
 						}}>
 						{' '}
-						Password
 					</Text>
-					<TextInput
-						placeholder='Password'
-						secureTextEntry={true}
-						onChangeText={(pass) => setPass(pass)}
-						style={styles.inputText}
-					/>
+					<View style={styles.inputWrapper}>
+						<Entypo
+							name='lock'
+							size={15}
+							style={{
+								color: COLOURS.white,
+								padding: 10,
+							}}></Entypo>
+
+						<TextInput
+							placeholder='Password'
+							secureTextEntry={true}
+							onChangeText={(pass) => setPass(pass)}
+							style={styles.inputText}
+						/>
+					</View>
 				</View>
 				<View style={{ paddingStart: 20, paddingTop: 10 }}>
 					<Text
@@ -106,21 +125,28 @@ const Login = ({ navigation }) => {
 							onPress={() => validateUser(email, pass)}>
 							{/* onPress={() => navigation.navigate('Home')}> */}
 							<View>
-								<Text style={styles.textBoxLogin.btn}>
+								<Text style={styles.textBoxSignup.btn}>
 									Login
 								</Text>
 							</View>
 						</TouchableOpacity>
 					</View>
-					<Text style={styles.textBoxLogin.small}>
-						Not a regestered user?
-					</Text>
-					<View style={{ ...styles.footerView, marginTop: 0 }}>
+					<View style={styles.textBoxSignup.wrapper}>
+						<Text
+							style={{
+								...styles.textBoxSignup.small,
+							}}>
+							Not a regestered user?
+						</Text>
 						<TouchableOpacity
 							onPress={() => navigation.navigate('Sign')}>
 							<View>
-								<Text style={styles.textBoxLogin.btn}>
-									Sign Up
+								<Text
+									style={{
+										color: COLOURS.white,
+										paddingTop: 20,
+									}}>
+									Sign Up Here
 								</Text>
 							</View>
 						</TouchableOpacity>
@@ -149,12 +175,23 @@ const styles = StyleSheet.create({
 		paddingStart: 20,
 		paddingTop: 10,
 	},
+	inputWrapper: {
+		flex: 1,
+		flexDirection: 'row',
+		justifyContent: 'center',
+		alignItems: 'center',
+		borderRadius: 10,
+		backgroundColor: COLOURS.backgroundMedium,
+	},
 	inputText: {
 		marginTop: 5,
 		padding: 5,
-		paddingLeft: 15,
+		paddingLeft: 0,
+		paddingRight: 10,
+		paddingBottom: 10,
 		height: 50,
 		borderRadius: 10,
+		flex: 1,
 		backgroundColor: COLOURS.backgroundMedium,
 	},
 	footerView: {
@@ -162,7 +199,14 @@ const styles = StyleSheet.create({
 		paddingTop: 10,
 		marginTop: 10,
 	},
-	textBoxLogin: {
+	textBoxSignup: {
+		wrapper: {
+			flex: 1,
+			width: '100%',
+			flexDirection: 'row',
+			justifyContent: 'space-between',
+			marginTop: 5,
+		},
 		btn: {
 			backgroundColor: '#2196F3',
 			color: COLOURS.white,
@@ -176,7 +220,7 @@ const styles = StyleSheet.create({
 		},
 		small: {
 			paddingTop: 20,
-			paddingStart: 90,
+			paddingStart: 80,
 			color: COLOURS.backgroundMedium,
 		},
 	},
