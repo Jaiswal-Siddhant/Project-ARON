@@ -13,10 +13,7 @@ client/*.mobileprovision
 client/*.orig.*
 client/web-build/
 .expo
-<<<<<<< HEAD
 
 server/config/config.env
-=======
->>>>>>> c1b14e9723de4849f1c768c40927283256a48031
 # macOS
 .DS_Store

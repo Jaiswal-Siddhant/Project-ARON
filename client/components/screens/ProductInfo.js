@@ -36,7 +36,7 @@ const ProductInfo = ({ route, navigation }) => {
 			}
 		}
 	};
-	console.log(product);
+	// console.log(product);
 	return (
 		<View
 			style={{

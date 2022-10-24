@@ -18,31 +18,31 @@ const Login = ({ navigation }) => {
 	const [isInvalid, setIsInvalid] = useState(false);
 
 	const validateUser = async (email, password) => {
-		try {
-			let data = {
-				method: 'POST',
-				headers: { 'Content-Type': 'application/json' },
-				body: JSON.stringify({
-					email,
-					password,
-				}),
-			};
-			const re = await fetch(
-				'http://192.168.29.81:4000/api/v1/login',
-				data
-			);
-			if (re.status != 200) {
-				setIsInvalid(true);
-			} else {
-				setIsInvalid(false);
-				const user = await re.json();
-				// Do something with user
-				// use it for profile or save it in localstorage
-				navigation.navigate('Home');
-			}
-		} catch (error) {
-			console.log(error);
-		}
+		// try {
+		// 	let data = {
+		// 		method: 'POST',
+		// 		headers: { 'Content-Type': 'application/json' },
+		// 		body: JSON.stringify({
+		// 			email,
+		// 			password,
+		// 		}),
+		// 	};
+		// 	const re = await fetch(
+		// 		'http://192.168.29.81:4000/api/v1/login',
+		// 		data
+		// 	);
+		// 	if (re.status != 200) {
+		// 		setIsInvalid(true);
+		// 	} else {
+		// 		setIsInvalid(false);
+		// 		const user = await re.json();
+		// 		// Do something with user
+		// 		// use it for profile or save it in localstorage
+		navigation.navigate('Home');
+		// 	}
+		// } catch (error) {
+		// 	console.log(error);
+		// }
 	};
 
 	return (
