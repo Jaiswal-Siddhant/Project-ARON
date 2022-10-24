@@ -68,7 +68,7 @@ const ProductInfo = ({ route, navigation }) => {
 						}}>
 						<View
 							style={{
-								width: '100%',
+								width: '25%',
 								borderColor: COLOURS.white,
 								borderWidth: 5,
 								borderRadius: 10,
@@ -84,47 +84,41 @@ const ProductInfo = ({ route, navigation }) => {
 										fontSize: 25,
 									}}></Entypo>
 							</TouchableOpacity>
-							<Text
-								style={{
-									paddingTop: 10,
-									position: 'absolute',
-									fontSize: 20,
-									fontWeight: '500',
-									alignSelf: 'center',
-								}}>
-								{product.productName}
-							</Text>
 						</View>
+
+						<TouchableOpacity
+							style={{
+								width: '75%',
+								alignItems: 'flex-end',
+								paddingRight: 30,
+								paddingTop: 15,
+							}}>
+							<Image
+								source={arImage}
+								style={{
+									width: 70,
+									height: 30,
+									padding: 5,
+									backgroundColor: COLOURS.backgroundLight,
+								}}
+							/>
+						</TouchableOpacity>
 					</View>
 					{/*wrapping entypo and 360 in one view*/}
 
 					<View>
 						<View>
-							<Image
-								source={product.productImage}
-								style={{ position: 'relative' }}
-							/>
-							<TouchableOpacity
-								style={{
-									width: '100%',
-									position: 'absolute',
-									alignItems: 'flex-end',
-									justifyContent: 'center',
-									paddingTop: 50,
-								}}>
-								<Image
-									source={arImage}
-									style={{
-										width: 70,
-										height: 30,
-										backgroundColor:
-											COLOURS.backgroundLight,
-									}}
-								/>
-							</TouchableOpacity>
+							<Image source={product.productImage} />
 						</View>
-					</View>
-					<View style={{ width: '90%' }}>
+						<Text
+							style={{
+								paddingTop: 10,
+								position: 'absolute',
+								fontSize: 20,
+								fontWeight: '500',
+							}}>
+							{product.productName}
+						</Text>
 						<Text
 							style={{
 								fontSize: 14,
@@ -133,17 +127,17 @@ const ProductInfo = ({ route, navigation }) => {
 							}}>
 							{product.description}
 						</Text>
-						<View>
-							<Text
-								style={{
-									fontSize: 14,
-									paddingTop: 10,
-									fontWeight: '400',
-									color: COLOURS.backgroundDark,
-								}}>
-								{product.subDes}
-							</Text>
-						</View>
+					</View>
+					<View>
+						<Text
+							style={{
+								paddingLeft: 20,
+								fontSize: 14,
+								fontWeight: '400',
+								color: COLOURS.backgroundDark,
+							}}>
+							{product.subDes}
+						</Text>
 					</View>
 				</View>
 			</ScrollView>
@@ -154,6 +148,7 @@ const ProductInfo = ({ route, navigation }) => {
 					backgroundColor: COLOURS.backgroundMedium,
 					display: 'flex',
 					flexDirection: 'row',
+					borderRadius: 10,
 					padding: 10,
 				}}>
 				<Text
@@ -162,7 +157,6 @@ const ProductInfo = ({ route, navigation }) => {
 						alignSelf: 'center',
 						fontWeight: '400',
 						fontSize: 15,
-						textAlign: 'center',
 					}}>
 					₹12233
 				</Text>
@@ -171,14 +165,13 @@ const ProductInfo = ({ route, navigation }) => {
 				<TouchableOpacity
 					style={{
 						width: '70%',
-						textAlign: 'center',
-						alignSelf: 'center',
+
 						borderLeftWidth: 1,
 						borderLeftColor: COLOURS.black,
 					}}>
 					<Text
 						style={{
-							width: '100%',
+							width: '80%',
 							textAlign: 'center',
 							fontWeight: '400',
 							fontSize: 20,

@@ -152,24 +152,20 @@ const styles = StyleSheet.create({
 		paddingHorizontal: 25,
 		backgroundColor: COLOURS.black,
 	},
-
 	scrollStyle: {
 		color: COLOURS.blue,
 		fontSize: 40,
 		fontWeight: 'bold',
 		paddingStart: 20,
 	},
-
 	gap: {
 		paddingStart: 20,
 		color: COLOURS.backgroundMedium,
 	},
-
 	headingText: {
 		paddingStart: 20,
 		paddingTop: 10,
 	},
-
 	inputText: {
 		marginTop: 5,
 		padding: 5,
@@ -178,7 +174,6 @@ const styles = StyleSheet.create({
 		borderRadius: 10,
 		backgroundColor: COLOURS.backgroundMedium,
 	},
-
 	footerView: {
 		paddingStart: 20,
 		paddingTop: 10,
