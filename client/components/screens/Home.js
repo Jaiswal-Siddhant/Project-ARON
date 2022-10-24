@@ -65,6 +65,7 @@ const Home = ({ navigation }) => {
 				horizontal
 				showsHorizontalScrollIndicator={false}
 				snapToInterval={200}
+				snapToAlignment={'start'}
 				data={sofa}
 				renderItem={renderProd}
 				keyExtractor={(item) => item.id}

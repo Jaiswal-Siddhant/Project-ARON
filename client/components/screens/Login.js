@@ -11,6 +11,7 @@ import {
 import Entypo from 'react-native-vector-icons/Entypo';
 import React, { useEffect, useState } from 'react';
 import { COLOURS } from '../database/database';
+import { LinearGradient } from 'expo';
 
 const Login = ({ navigation }) => {
 	const [email, setEmail] = useState('');
@@ -47,17 +48,15 @@ const Login = ({ navigation }) => {
 
 	return (
 		<View style={styles.wrapper}>
-			<Image source={''}></Image>
 			<ScrollView style={styles.scrollStyle}>
-				<Text
+				<Image
+					source={require('../../assets/app-icon.png')}
 					style={{
-						color: COLOURS.blue,
-						fontSize: 40,
-						fontWeight: 'bold',
-						paddingStart: 20,
-					}}>
-					Login
-				</Text>
+						width: 200,
+						height: 100,
+						alignSelf: 'center',
+					}}
+				/>
 				<Text style={styles.gap}></Text>
 
 				{/* User field*/}
@@ -71,13 +70,14 @@ const Login = ({ navigation }) => {
 					<View style={styles.inputWrapper}>
 						<Entypo
 							size={16}
-							name='user'
+							name='mail'
 							style={{
 								color: COLOURS.white,
 								padding: 10,
 							}}></Entypo>
 						<TextInput
 							placeholder='Email'
+							placeholderTextColor='#fff'
 							style={styles.inputText}
 							onChangeText={(email) => setEmail(email)}
 						/>
@@ -104,6 +104,7 @@ const Login = ({ navigation }) => {
 						<TextInput
 							placeholder='Password'
 							secureTextEntry={true}
+							placeholderTextColor='#fff'
 							onChangeText={(pass) => setPass(pass)}
 							style={styles.inputText}
 						/>
@@ -181,7 +182,9 @@ const styles = StyleSheet.create({
 		justifyContent: 'center',
 		alignItems: 'center',
 		borderRadius: 10,
-		backgroundColor: COLOURS.backgroundMedium,
+		color: '#fff',
+		borderBottomWidth: 1,
+		borderBottomColor: '#a2b4ef',
 	},
 	inputText: {
 		marginTop: 5,
@@ -192,7 +195,7 @@ const styles = StyleSheet.create({
 		height: 50,
 		borderRadius: 10,
 		flex: 1,
-		backgroundColor: COLOURS.backgroundMedium,
+		color: '#fff',
 	},
 	footerView: {
 		paddingStart: 20,
