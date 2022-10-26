@@ -62,9 +62,6 @@ const ProductInfo = ({ route, navigation }) => {
 						style={{
 							display: 'flex',
 							flexDirection: 'row',
-							borderBottomColor: COLOURS.backgroundDark,
-							borderBottomWidth: 1,
-							shadowOpacity: 5,
 						}}>
 						<View
 							style={{
@@ -106,8 +103,19 @@ const ProductInfo = ({ route, navigation }) => {
 					</View>
 					{/*wrapping entypo and 360 in one view*/}
 
-					<View>
-						<View>
+					<View
+						style={{
+							width: '95%',
+							borderRadius: 20,
+							backgroundColor: COLOURS.backgroundLight,
+						}}
+					>
+						<View
+							style={{
+								alignSelf: 'center',
+
+							}}
+						>
 							<Image source={product.productImage} />
 						</View>
 						<Text
@@ -116,40 +124,73 @@ const ProductInfo = ({ route, navigation }) => {
 								position: 'absolute',
 								fontSize: 20,
 								fontWeight: '500',
+								alignSelf: 'center',
 							}}>
 							{product.productName}
 						</Text>
+
+					</View>
+
+					<View
+					>
 						<Text
 							style={{
+								backgroundColor: COLOURS.backgroundLight,
+								borderRadius: 10,
+								padding: 10,
+								margin: 10,
 								fontSize: 14,
 								fontWeight: '400',
-								color: COLOURS.yellow,
+								color: COLOURS.black,
+								alignSelf: 'center',
 							}}>
 							{product.description}
 						</Text>
-					</View>
-					<View>
-						<Text
+
+						<View
 							style={{
-								paddingLeft: 20,
-								fontSize: 14,
-								fontWeight: '400',
-								color: COLOURS.backgroundDark,
-							}}>
-							{product.subDes}
-						</Text>
+								backgroundColor: COLOURS.backgroundLight,
+								borderRadius: 10,
+								margin: 10,
+								paddingHorizontal: 10,
+							}}
+						>
+							<Text
+								style={{
+									paddingTop: 10,
+									paddingRight: 10,
+									paddingLeft: 15,
+									fontSize: 14,
+									fontWeight: '600',
+									color: COLOURS.black,
+								}}
+							>Description:</Text>
+							<Text
+								style={{
+									paddingTop: 5,
+									textAlign: 'center',
+									paddingRight: 10,
+									paddingLeft: 10,
+									fontSize: 14,
+									fontWeight: '400',
+									color: COLOURS.backgroundDark,
+								}}>
+								{product.subDes}
+							</Text>
+						</View>
 					</View>
 				</View>
 			</ScrollView>
 			<View
 				style={{
 					height: 50,
-					width: '100%',
+					width: '95%',
 					backgroundColor: COLOURS.backgroundMedium,
 					display: 'flex',
 					flexDirection: 'row',
 					borderRadius: 10,
 					padding: 10,
+					alignSelf: 'center'
 				}}>
 				<Text
 					style={{
@@ -165,7 +206,6 @@ const ProductInfo = ({ route, navigation }) => {
 				<TouchableOpacity
 					style={{
 						width: '70%',
-
 						borderLeftWidth: 1,
 						borderLeftColor: COLOURS.black,
 					}}>

@@ -10,13 +10,14 @@ import {
 } from 'react-native';
 import React, { useEffect, useState } from 'react';
 import { COLOURS } from '../database/database';
+import Entypo from 'react-native-vector-icons/Entypo';
 
 const Login = ({ navigation }) => {
 	const [name, setName] = useState('');
 	const [email, setEmail] = useState('');
+	const [number, setNumber] = useState('');
 	const [pass, setPass] = useState('');
-	const [isInvalid, setIsInvalid] = useState(false);
-	const [msgText, setMsgText] = useState('');
+
 
 	const validateUser = async (name, email, password) => {
 		try {
@@ -52,81 +53,112 @@ const Login = ({ navigation }) => {
 		}
 	};
 
-	return (
-		<ScrollView style={styles.wrapper}>
-			<Text style={styles.scrollStyle}>Register</Text>
+	return (<View style={styles.wrapper}>
+		<ScrollView style={styles.scrollStyle}>
+			<Image
+				source={require('../../assets/app-icon.png')}
+				style={{
+					width: 200,
+					height: 100,
+					alignSelf: 'center',
+				}}
+			/>
 			<Text style={styles.gap}></Text>
+
+			{/* User field*/}
 			<View style={styles.headingText}>
 				<Text
 					style={{
 						color: COLOURS.white,
 					}}>
 					{' '}
-					Name
 				</Text>
-				<TextInput
-					placeholder='Name'
-					style={styles.inputText}
-					onChangeText={(name) => setName(name)}
-				/>
+				{/* set email */}
+				<View style={styles.inputWrapper}>
+					<Entypo
+						size={16}
+						name='mail'
+						style={{
+							color: COLOURS.white,
+							padding: 10,
+						}}></Entypo>
+					<TextInput
+						placeholder='Email'
+						placeholderTextColor='#fff'
+						style={styles.inputText}
+						onChangeText={(email) => setEmail(email)}
+					/>
+				</View>
+				{/* set name */}
+				<View style={styles.inputWrapper}>
+					<Entypo
+						size={16}
+						name='user'
+						style={{
+							color: COLOURS.white,
+							padding: 10,
+						}}></Entypo>
+					<TextInput
+						placeholder='Name'
+						placeholderTextColor='#fff'
+						style={styles.inputText}
+						onChangeText={(name) => setName(name)}
+					/>
+				</View>
+				{/* set number */}
+				<View style={styles.inputWrapper}>
+					<Entypo
+						size={16}
+						name='mobile'
+						style={{
+							color: COLOURS.white,
+							padding: 10,
+						}}></Entypo>
+					<TextInput
+						placeholder='Number'
+						placeholderTextColor='#fff'
+						style={styles.inputText}
+						onChangeText={(number) => setNumber(number)}
+					/>
+				</View>
+				{/* set pass */}
+				<View style={styles.inputWrapper}>
+					<Entypo
+						size={16}
+						name='lock'
+						style={{
+							color: COLOURS.white,
+							padding: 10,
+						}}></Entypo>
+					<TextInput
+						placeholder='Password'
+						placeholderTextColor='#fff'
+						style={styles.inputText}
+						onChangeText={(pass) => setPass(pass)}
+					/>
+				</View>
 			</View>
 
-			{/* Email field*/}
-			<View style={{ paddingStart: 20, paddingTop: 10 }}>
-				<Text
-					style={{
-						color: COLOURS.white,
-					}}>
-					{' '}
-					Email
-				</Text>
-				<TextInput
-					placeholder='Email'
-					style={styles.inputText}
-					onChangeText={(mail) => setEmail(mail)}
-				/>
-			</View>
 
-			{/* number field*/}
-			<View style={{ paddingStart: 20, paddingTop: 10 }}>
-				<Text
-					style={{
-						color: COLOURS.white,
-					}}>
-					{' '}
-					Password
-				</Text>
-				<TextInput
-					placeholder='password`'
-					style={styles.inputText}
-					onChangeText={(pass) => setPass(pass)}
-					// secureTextEntry={true}
-				/>
-			</View>
-			<View style={{ paddingStart: 20, paddingTop: 10 }}>
-				<Text
-					style={{
-						color: COLOURS.red,
-						display: isInvalid ? 'flex' : 'none',
-					}}>
-					{msgText}
-				</Text>
-			</View>
-			<View style={{ marginTop: 60 }}>
+
+			<View style={{ marginTop: 40 }}>
 				<View style={styles.footerView}>
 					<TouchableOpacity
-						onPress={() => validateUser(name, email, pass)}>
+						onPress={() => registerUser(email, name, number, pass)}>
+						{/* onPress={() => navigation.navigate('Home')}> */}
 						<View>
-							<Text style={styles.textBoxLogin.btn}>Signup</Text>
+							<Text style={styles.textBoxSignup.btn}>
+								Sign UP
+							</Text>
 						</View>
 					</TouchableOpacity>
 				</View>
-				<View style={styles.textBoxLogin.wrapper}>
+				<View style={styles.textBoxSignup.wrapper}>
 					<Text
 						style={{
-							...styles.textBoxLogin.small,
+							...styles.textBoxSignup.small,
 						}}>
-						Already have an acccount?
+						Already registered user?
 					</Text>
 					<TouchableOpacity
 						onPress={() => navigation.navigate('Login')}>
@@ -135,6 +167,7 @@ const Login = ({ navigation }) => {
 								style={{
 									color: COLOURS.white,
 									paddingTop: 20,
+									paddingRight: 10,
 								}}>
 								Login Here
 							</Text>
@@ -143,20 +176,20 @@ const Login = ({ navigation }) => {
 				</View>
 			</View>
 		</ScrollView>
+	</View>
+
 	);
 };
 
 const styles = StyleSheet.create({
 	wrapper: {
-		paddingTop: 150,
-		paddingHorizontal: 25,
 		backgroundColor: COLOURS.black,
 	},
 	scrollStyle: {
-		color: COLOURS.blue,
-		fontSize: 40,
-		fontWeight: 'bold',
-		paddingStart: 20,
+		height: '100%',
+		paddingTop: 200,
+		paddingHorizontal: 25,
+		backgroundColor: COLOURS.black,
 	},
 	gap: {
 		paddingStart: 20,
@@ -166,21 +199,33 @@ const styles = StyleSheet.create({
 		paddingStart: 20,
 		paddingTop: 10,
 	},
+	inputWrapper: {
+		flex: 1,
+		flexDirection: 'row',
+		justifyContent: 'center',
+		alignItems: 'center',
+		borderRadius: 10,
+		color: '#fff',
+		borderBottomWidth: 1,
+		borderBottomColor: '#a2b4ef',
+	},
 	inputText: {
 		marginTop: 5,
 		padding: 5,
-		paddingLeft: 15,
+		paddingLeft: 0,
+		paddingRight: 10,
+		paddingBottom: 10,
 		height: 50,
 		borderRadius: 10,
-		backgroundColor: COLOURS.backgroundMedium,
+		flex: 1,
+		color: '#fff',
 	},
 	footerView: {
 		paddingStart: 20,
 		paddingTop: 10,
 		marginTop: 10,
 	},
-
-	textBoxLogin: {
+	textBoxSignup: {
 		wrapper: {
 			flex: 1,
 			width: '100%',
@@ -201,9 +246,10 @@ const styles = StyleSheet.create({
 		},
 		small: {
 			paddingTop: 20,
-			paddingStart: 70,
+			paddingStart: 80,
 			color: COLOURS.backgroundMedium,
 		},
 	},
 });
+
 export default Login;

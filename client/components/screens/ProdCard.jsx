@@ -53,7 +53,7 @@ const productStyles = StyleSheet.create({
 	imgWrapper: {
 		width: '100%',
 		height: 200,
-		backgroundColor: COLOURS.backgroundLight,
+		backgroundColor: COLOURS.black,
 		justifyContent: 'center',
 		alignItems: 'center',
 		marginLeft: 10,
