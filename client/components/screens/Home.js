@@ -49,11 +49,31 @@ const Home = ({ navigation }) => {
 	};
 
 	return (
-		<View style={{ paddingTop: 40 }}>
+		<View style={{ paddingTop: 40, backgroundColor: COLOURS.black, height: '100%' }}>
 			<Text
 				style={{
 					fontSize: 14,
-					color: COLOURS.black,
+					color: COLOURS.white,
+					fontWeight: '500',
+					letterSpacing: 1,
+					marginBottom: 10,
+					paddingStart: 20,
+				}}>
+				Popular
+			</Text>
+			<FlatList
+				horizontal
+				showsHorizontalScrollIndicator={false}
+				snapToInterval={200}
+				snapToAlignment={'start'}
+				data={sofa}
+				renderItem={renderProd}
+				keyExtractor={(item) => item.id}
+			/>
+			<Text
+				style={{
+					fontSize: 14,
+					color: COLOURS.white,
 					fontWeight: '500',
 					letterSpacing: 1,
 					marginBottom: 10,
