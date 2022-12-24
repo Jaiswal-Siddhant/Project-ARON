@@ -11,7 +11,7 @@ const {
 	getAllUsers,
 	getSingleUser,
 	deleteUserProfile,
-	updateUserRole,
+	updateUserRole, sendModel
 } = require('../controllers/userController');
 
 const { isAuthenticatedUser, authorizeRoles } = require('../middlewares/auth');
@@ -25,6 +25,7 @@ router.route('/password/update').put(isAuthenticatedUser, updateUserPassword);
 router.route('/password/forgot').post(forgotPassword);
 router.route('/password/reset/:token').put(resetPassword);
 router.route('/logout').get(logoutUser);
+router.route('/model/:model').get(sendModel);
 
 router
 	.route('/admin/users')

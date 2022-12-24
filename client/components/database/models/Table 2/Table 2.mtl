@@ -1,0 +1,28 @@
+# 3ds Max Wavefront OBJ Exporter v0.94b - (c)2007 guruware
+# File Created: 22.10.2022 12:47:36
+
+newmtl Glass
+	Ns 0.0000
+	Ni 1.5000
+	d 0.4000
+	Tr 0.4000
+	Tf 0.4000 0.4000 0.4000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 0.5529 0.5765 0.9098
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+
+newmtl Wood
+	Ns 70.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 0.9843 0.9686 0.9412
+	Ks 0.6300 0.6300 0.6300
+	Ke 0.0000 0.0000 0.0000
+	map_Ka D:\New folder 2\wood_26.jpg
+	map_Kd D:\New folder 2\wood_26.jpg

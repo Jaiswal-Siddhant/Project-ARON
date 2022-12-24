@@ -33,6 +33,12 @@ const userSchema = new mongoose.Schema({
 			required: true,
 		},
 	},
+	mobileNumber: {
+		type: Number,
+		length: [10, 'Mobile Number should be 10 digits'],
+		required: [true, 'Please Enter Your Mobile Number'],
+		default: 9191919191,
+	},
 	role: {
 		type: String,
 		default: 'user',
@@ -45,7 +51,7 @@ const userSchema = new mongoose.Schema({
 	resetPasswordToken: {
 		type: String
 	},
-	
+
 	resetPasswordExpire: {
 		type: Date
 	},

@@ -1,4 +1,5 @@
-const app = require('./app');
+const app = require('./app.js');
+// import { app  from './app.js'
 const dotenv = require('dotenv');
 
 const connectDB = require('./db/database');

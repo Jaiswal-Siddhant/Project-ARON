@@ -4,15 +4,17 @@ const User = require('../models/userModel');
 const sendToken = require('../utils/jwtToken');
 const sendEmail = require('../utils/sendEmail');
 const crypto = require('crypto');
+const path = require('path');
 
 // Register User
 exports.registerUser = async (req, res, next) => {
 	try {
-		const { name, email, password } = req.body;
+		const { name, email, password, mobileNumber } = req.body;
 		const user = await User.create({
 			name,
 			email,
 			password,
+			mobileNumber,
 			avatar: {
 				public_id: 'sample ID',
 				url: 'sampleURI',
@@ -269,3 +271,10 @@ exports.deleteUserProfile = catchAsyncError(async (req, res, next) => {
 		message: 'User deleted successfully.',
 	});
 });
+
+exports.sendModel = (req, res, next) => {
+	console.log(req.params.model);
+	const mod = req.params.model;
+	res.sendFile(path.join(__dirname, `../Model/${mod}/${mod}.glb`));
+
+}

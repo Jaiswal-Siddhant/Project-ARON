@@ -12,9 +12,22 @@ exports.createProduct = catchAsyncError(async (req, res, next) => {
 });
 
 // GET all products
+exports.getProducts = catchAsyncError(async (req, res, next) => {
+	// return next(new ErrorHandler('Product Not Found!', 500).getError(res));
+	const resultPerPage = 5;
+	const productsCount = await Product.countDocuments();
+
+	const apiFeature = new ApiFeatures(Product.find(), req.query)
+		.search()
+		.filter()
+	const products = await apiFeature.query;
+	res.status(200).json({ success: true, products, productsCount });
+});
+
+// GET all products
 exports.getAllProducts = catchAsyncError(async (req, res, next) => {
 	// return next(new ErrorHandler('Product Not Found!', 500).getError(res));
-	const resultPerPage = 8;
+	const resultPerPage = 5;
 	const productsCount = await Product.countDocuments();
 
 	const apiFeature = new ApiFeatures(Product.find(), req.query)
