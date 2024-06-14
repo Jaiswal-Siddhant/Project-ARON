@@ -39,6 +39,20 @@ Feel free to reach out to me or our contributors
 
 [Reach us in LinkedIn.](https://www.linkedin.com/in/jaiswal-siddhant/)
 
+## Application
+### Login Page
+![image](https://github.com/Mukkawar-Shlok/Project-Phase-1/assets/87766297/47b89579-7145-4e9d-8167-b278bdb5ba47)
+### Product Page
+![image](https://github.com/Mukkawar-Shlok/Project-Phase-1/assets/87766297/65a0165c-c5a9-4c36-a495-4283e877d704)
+### Product Page
+![image](https://github.com/Mukkawar-Shlok/Project-Phase-1/assets/87766297/43062678-8fb5-4e17-b7e3-62a160e73266)
+![image](https://github.com/Mukkawar-Shlok/Project-Phase-1/assets/87766297/fc3fa567-4014-4f58-a956-b7e3d7b8158a)
+### AR Page
+![image](https://github.com/Mukkawar-Shlok/Project-Phase-1/assets/87766297/678021bf-d2bc-428a-9d69-7177b6a0ece3)
+### Payment Page
+![image](https://github.com/Mukkawar-Shlok/Project-Phase-1/assets/87766297/f69b2543-40ec-44a6-8d77-3fcc31353e41)
+![image](https://github.com/Mukkawar-Shlok/Project-Phase-1/assets/87766297/e8bf3658-5331-4a14-a6bd-ea35af802a96)
+
 # Contributors
 
 <a href="https://github.com/Jaiswal-Siddhant/Project-ARON/graphs/contributors">
